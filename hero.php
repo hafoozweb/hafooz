@@ -1,5 +1,38 @@
 <!-- Hero -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const images = [
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/banner.webp',
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/outer1.webp',
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/outer2.webp',
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/inner.webp',
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/round-box.webp',
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/Lead%20Generation.png',
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/Lead%20Nurturing.png',
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/Order%20Creation.png',
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/Quotation.png',
+        'https://raw.githubusercontent.com/hafoozweb/hafooz/main/Customer%20Support.png'
+    ];
 
+    let loadedImages = 0;
+
+    function imageLoaded() {
+        loadedImages++;
+        if (loadedImages === images.length) {
+            document.querySelector(".hero-section").style.display = "block";
+        }
+    }
+
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onload = imageLoaded;
+        img.onerror = imageLoaded;
+    });
+
+    document.querySelector(".hero-section").style.display = "none";
+});
+</script>
 <style>
 .background-hrv1 {
     position: absolute;
